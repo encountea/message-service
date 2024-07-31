@@ -16,12 +16,6 @@ func NewHandler(service *service.Service) *Handler {
 	return &Handler{service: service}
 }
 
-// func InitRoutes(r *http.ServeMux, h *Handler) *http.ServeMux {
-// 	r.HandleFunc("/messages", h.CreateMessage)
-// 	r.HandleFunc("/stats", h.GetStats)
-// 	return r
-// }
-
 func (h *Handler) InitRoutes() *http.ServeMux {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/messages", h.CreateMessage)
